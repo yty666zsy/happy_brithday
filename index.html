@@ -1,0 +1,108 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 封面 -->
+    <div class="container">
+        <div class="row">
+            <div class="birth-cover-container">
+                <button id="birth-start-btn" disabled>加载中...</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 歌曲 -->
+    <audio class="song" id="song1" controls loop style="display: none; opacity: 0">
+        <source src="music/index.mp3" />
+    </audio>
+
+    <!-- 彩带 -->
+    <canvas id="brith-confetti"></canvas>
+
+    <!-- 主内容 -->
+    <div class="main">
+        <div class="container pt-5">
+            <div class="row">
+                <!-- 横幅图 -->
+                <div class="col-12 col-xl-6 mx-auto">
+                    <img src="img/banner.png" alt="banner.png">
+                </div>
+
+                <!-- 寿星 -->
+                <div class="col-12 text-center">
+                    <div id="name" class="birth-people-name">Lily</div>
+                </div>
+
+                <!-- 祝词 -->
+                <div class="col-12 text-center">
+                    <div class="birth-greeting-word">
+                        <div id="greeting-word" class="typing">
+                            <h2><span>生日快乐呀，</span><i id="inline-name" class="birth-inline-people-name">思思</i><span id="people-type">小姐姐</span></h2>
+                            <h2>且喜且乐，且以永日</h2>
+                            <h2>一寸一礼，一寸欢喜</h2>
+                            <h2>遥叩芳辰，生辰吉乐</h2>
+                            <h2>日逢良辰，顺颂时宜</h2>
+                            <h2>寿星当朝，喜气洋洋</h2>
+                            <h2>岁岁春无事，相逢总玉颜</h2>
+                            <h2>与天地兮同寿，与日月兮同光</h2>
+                            <h2>把酒祝君常健，相随归老吾乡</h2>
+                            <h2>朱颜长似，头上花枝，岁岁年年</h2>
+                            <h2>余生事事无情绪，直向清凉度碎念</h2>
+                            <h2>爱你❤老婆</h2>
+                        </div>
+                        <span id="typed" style="white-space: pre;"></span>
+                    </div>
+                </div>
+
+                <!-- 蛋糕图 -->
+                <div class="col-12 col-xl-3 birth-cake">
+                    <img src="img/cake.gif" alt="cake.gif">
+                </div>
+
+                <!-- 版权 -->
+                <div class="col-12 text-center">
+                    <span class="birth-greeting-word" id="author">&copy;2024 宇宙无敌大帅哥</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 气球图 -->
+        <img src="img/balloon.png" alt="balloon" class="brith-balloon">
+    </div>
+
+    <script src="js/lib/snowflakes.min.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/typed.min.js"></script>
+    <script src="js/lib/dayjs.min.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/index.js"></script>
+
+    <script>
+        // 开始播放第一段音乐
+        var song1 = document.getElementById("song1");
+
+        // 自动播放音乐并显示控制按钮
+        song1.play();
+        song1.style.display = "block";
+        song1.style.opacity = "1";
+
+        // 第一段结束后跳转到第二段
+        setTimeout(function () {
+            // 停止第一段音乐
+            song1.pause();
+            
+            // 跳转到第二段内容
+            window.location.href = "index3.html"; // 第二段路径
+        }, 25000); // 第一段持续时间 30秒
+    </script>
+</body>
+
+</html>
